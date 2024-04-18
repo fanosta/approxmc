@@ -145,6 +145,9 @@ ApproxMC reports that we have approximately `96 (=48*2)` solutions to the CNF's 
 ### Guarantees
 ApproxMC provides so-called "PAC", or Probably Approximately Correct, guarantees. In less fancy words, the system guarantees that the solution found is within a certain tolerance (called "epsilon") with a certain probability (called "delta"). The default tolerance and probability, i.e. epsilon and delta values, are set to 0.8 and 0.2, respectively. Both values are configurable.
 
+Concretely, for a problem $F$ with a true count $|\mathrm{sol}(F)|$ the following guarantees hold for the returned approximate count $c$:
+$$\frac{1}{1+\epsilon}\cdot\mathrm{sol}(F) \leq c \leq (1+\epsilon)\cdot\mathrm{sol}(F)\quad\text{with probability } p\geq 1-\delta.$$
+
 ### Library usage
 
 The system can be used as a library:
